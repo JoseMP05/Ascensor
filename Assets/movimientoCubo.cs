@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class movimientoCubo : MonoBehaviour
 {
+    //private UIManager _UIManager;
+    //public GameObject floorValidator;
+
+    public liftController liftController;
+
     public float speed;
     public float rotationSpeed;
     private float _movimientoHorizontal;
@@ -19,6 +24,9 @@ public class movimientoCubo : MonoBehaviour
         speed = 10f;
         rotationSpeed = 100f;
         initialPosition = transform.position;
+
+        liftController = GameObject.FindObjectOfType<liftController>();
+
 }
 
     // Update is called once per frame
@@ -50,10 +58,50 @@ public class movimientoCubo : MonoBehaviour
             door.SetActive(true);
         }
 
-        //if (collider.CompareTag("playerReset"))
+        if (collider.gameObject.name == "1")
+        {
+            liftController.MoveLift(1);
+        }
+
+
+        if (collider.gameObject.name == "2")
+        {
+            liftController.MoveLift(2);
+        }
+
+        if (collider.gameObject.name == "3")
+        {
+            liftController.MoveLift(2);
+        }
+
+
+        if (collider.gameObject.name == "4")
+        {
+            liftController.MoveLift(2);
+        }
+
+
+        if (collider.gameObject.name == "5")
+        {
+            liftController.MoveLift(2);
+        }
+
+
+        if (collider.gameObject.name == "6")
+        {
+            liftController.MoveLift(2);
+        }
+
+
+
+        //if (collider.gameObject.name == "floor Validator")
         //{
-        //    transform.position = new Vector3(0, 0.5f, 0);
+        //    Debug.Log("hola");
+
+        //    _UIManager.ChangeFloorNumber(1);
         //}
+
+
     }
 
 }
